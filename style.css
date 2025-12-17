@@ -1,21 +1,53 @@
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
+  background: linear-gradient(120deg, #84fab0, #8fd3f4);
   text-align: center;
 }
 
-.arena {
+h1 {
+  margin-top: 20px;
+}
+
+.game {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .player {
-  border: 2px solid black;
-  padding: 15px;
+  background: white;
+  padding: 20px;
   width: 200px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #ff9800;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f57c00;
+}
+
+#arena {
+  font-size: 28px;
 }
 
 #tali {
-  font-size: 24px;
+  transition: margin-left 0.3s;
 }
