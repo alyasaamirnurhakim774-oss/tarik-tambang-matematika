@@ -2,18 +2,18 @@ let posisi = 0;
 let jawabanBenar = 0;
 let gameMulai = false;
 
-function mulaiGame() {
+window.mulaiGame = function () {
   gameMulai = true;
   posisi = 0;
-  document.getElementById("tali").style.marginLeft = "0px";
 
+  document.getElementById("tali").style.marginLeft = "0px";
   document.getElementById("jawaban1").disabled = false;
   document.getElementById("jawaban2").disabled = false;
   document.getElementById("btn1").disabled = false;
   document.getElementById("btn2").disabled = false;
 
   buatSoal();
-}
+};
 
 function buatSoal() {
   const a = Math.floor(Math.random() * 10) + 1;
@@ -22,7 +22,7 @@ function buatSoal() {
   document.getElementById("soal").innerText = a + " + " + b;
 }
 
-function cekJawaban(player) {
+window.cekJawaban = function (player) {
   if (!gameMulai) return;
 
   const input = document.getElementById("jawaban" + player);
@@ -32,7 +32,7 @@ function cekJawaban(player) {
     buatSoal();
   }
   input.value = "";
-}
+};
 
 function gerakTali() {
   const tali = document.getElementById("tali");
