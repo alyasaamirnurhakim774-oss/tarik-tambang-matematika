@@ -1,58 +1,26 @@
-let posisi = 0;
-let jawabanBenar = 0;
-let gameMulai = false;
+let a, b, jawaban;
 
-window.mulaiGame = function () {
-  gameMulai = true;
-  posisi = 0;
+const soalEl = document.getElementById("soal");
+const startBtn = document.getElementById("startBtn");
 
-  document.getElementById("tali").style.marginLeft = "0px";
-  document.getElementById("jawaban1").disabled = false;
-  document.getElementById("jawaban2").disabled = false;
-  document.getElementById("btn1").disabled = false;
-  document.getElementById("btn2").disabled = false;
-
-  buatSoal();
+startBtn.onclick = () => {
+  a = Math.floor(Math.random() * 10) + 1;
+  b = Math.floor(Math.random() * 10) + 1;
+  jawaban = a + b;
+  soalEl.textContent = `${a} + ${b}`;
 };
 
-function buatSoal() {
-  const a = Math.floor(Math.random() * 10) + 1;
-  const b = Math.floor(Math.random() * 10) + 1;
-  jawabanBenar = a + b;
-  document.getElementById("soal").innerText = a + " + " + b;
-}
+function jawab(player) {
+  const input =
+    player === 1
+      ? document.getElementById("jawab1")
+      : document.getElementById("jawab2");
 
-window.cekJawaban = function (player) {
-  if (!gameMulai) return;
-
-  const input = document.getElementById("jawaban" + player);
-  if (parseInt(input.value) === jawabanBenar) {
-    posisi += player === 1 ? -1 : 1;
-    gerakTali();
-    buatSoal();
+  if (parseInt(input.value) === jawaban) {
+    alert(`Player ${player} BENAR! 💪`);
+  } else {
+    alert(`Player ${player} SALAH 😭`);
   }
+
   input.value = "";
-};
-
-function gerakTali() {
-  const tali = document.getElementById("tali");
-  tali.style.marginLeft = posisi * 20 + "px";
-
-  if (posisi <= -5) {
-    alert("🏆 PLAYER 1 MENANG!");
-    resetGame();
-  }
-  if (posisi >= 5) {
-    alert("🏆 PLAYER 2 MENANG!");
-    resetGame();
-  }
-}
-
-function resetGame() {
-  gameMulai = false;
-  document.getElementById("soal").innerText = "---";
-  document.getElementById("jawaban1").disabled = true;
-  document.getElementById("jawaban2").disabled = true;
-  document.getElementById("btn1").disabled = true;
-  document.getElementById("btn2").disabled = true;
 }
