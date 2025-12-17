@@ -1,0 +1,21 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.arena {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.player {
+  border: 2px solid black;
+  padding: 15px;
+  width: 200px;
+}
+
+#tali {
+  font-size: 24px;
+}
