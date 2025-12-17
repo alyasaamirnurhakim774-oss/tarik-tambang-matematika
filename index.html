@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Tarik Tambang Matematika</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <h1>🧮 Tarik Tambang Matematika</h1>
-
   <h2>Soal: <span id="soal">---</span></h2>
 
-  <!-- TOMBOL MULAI -->
-  <button id="mulaiBtn" onclick="mulaiGame()">▶️ Mulai Game</button>
+  <button id="startBtn">▶️ Mulai Game</button>
 
-  <div class="game">
+  <div class="arena">
     <div class="player">
       <h3>Player 1</h3>
-      <input type="number" id="jawaban1" placeholder="Jawaban" disabled>
-      <button onclick="cekJawaban(1)" disabled id="btn1">Submit</button>
+      <input type="number" id="jawab1" placeholder="Jawaban">
+      <button onclick="jawab(1)">Submit</button>
     </div>
 
-    <div id="arena">
-      <div id="tali">🤼‍♂️======🏁======🤼‍♂️</div>
-    </div>
+    <div id="tali">🤼‍♂️ ===== 🏁 ===== 🤼‍♂️</div>
 
     <div class="player">
       <h3>Player 2</h3>
-      <input type="number" id="jawaban2" placeholder="Jawaban" disabled>
-      <button onclick="cekJawaban(2)" disabled id="btn2">Submit</button>
+      <input type="number" id="jawab2" placeholder="Jawaban">
+      <button onclick="jawab(2)">Submit</button>
     </div>
   </div>
 
